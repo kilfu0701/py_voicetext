@@ -4,3 +4,6 @@ build:
 
 run:
 	LD_LIBRARY_PATH=. python test.py
+
+clean:
+	rm -f py_voicetext.pyc py_voicetext.py py_voicetext_wrap.cxx
