@@ -21,7 +21,7 @@ def main():
     z = py_voicetext.VT_LOADTTS_JPN(0, -1, DB_PATH, LICENSE_FILE)
 
     # generate a sample TTS wav
-    ret_code = py_voicetext.VT_TextToFile_JPN(py_voicetext.VT_FILE_API_FMT_S16PCM_WAVE , "animal", "/tmp/1.wav", -1, -1, -1, -1, -1, -1, -1);
+    ret_code = py_voicetext.VT_TextToFile_JPN(py_voicetext.VT_FILE_API_FMT_S16PCM_WAVE , "animal", "/tmp/1.wav", -1, -1, -1, -1, -1, -1, -1)
     if ret_code != py_voicetext.VT_FILE_API_SUCCESS:
         print('error')
         py_voicetext.VT_UNLOADTTS_JPN(-1)
