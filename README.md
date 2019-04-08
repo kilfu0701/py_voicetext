@@ -38,6 +38,19 @@ import py_voicetext
 # see library details
 help(py_voicetext)
 
+# get load code
+infoval = py_voicetext.new_intp()
+py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_LOAD_SUCCESS_CODE, None, infoval, 4)
+print('infoval = ', py_voicetext.intp_value(infoval))
+
+# get VT_MAX_CHANNEL
+py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_MAX_CHANNEL, None, infoval, 4)
+print('VT_MAX_CHANNEL = ', py_voicetext.intp_value(infoval))
+
+# VT_SAMPLING_FREQUENCY
+py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_SAMPLING_FREQUENCY, None, infoval, 4)
+print('VT_SAMPLING_FREQUENCY = ', py_voicetext.intp_value(infoval))
+
 # load tts
 DB_PATH = '/usr/vt/hikari/D44'
 LICENSE_FILE = '/usr/vt/verify/verification.txt'
@@ -61,7 +74,7 @@ py_voicetext.VT_UNLOADTTS_JPN(-1)
 
 ## Known Issues:
 
-- Now VT_GetTTSInfo_JPN( ... ) will occur segmentation fault, maybe fix in future.
+- Now VT_GetTTSInfo_JPN( ... ) support `(int *)` only.
 
 
 ## Author
