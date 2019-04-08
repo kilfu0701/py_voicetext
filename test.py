@@ -4,9 +4,18 @@ DB_PATH = '/usr/vt/hikari/D44'
 LICENSE_FILE = '/usr/vt/verify/verification.txt'
 
 def main():
-    ## TODO: fix error bug
-    #infoval = 0
-    #py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_LOAD_SUCCESS_CODE, None, infoval, 4)
+    # get load code
+    infoval = py_voicetext.new_intp()
+    py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_LOAD_SUCCESS_CODE, None, infoval, 4)
+    print('infoval = ', py_voicetext.intp_value(infoval))
+
+    # get VT_MAX_CHANNEL
+    py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_MAX_CHANNEL, None, infoval, 4)
+    print('VT_MAX_CHANNEL = ', py_voicetext.intp_value(infoval))
+
+    # VT_SAMPLING_FREQUENCY
+    py_voicetext.VT_GetTTSInfo_JPN(py_voicetext.VT_SAMPLING_FREQUENCY, None, infoval, 4)
+    print('VT_SAMPLING_FREQUENCY = ', py_voicetext.intp_value(infoval))
 
     # init py_voicetext
     z = py_voicetext.VT_LOADTTS_JPN(0, -1, DB_PATH, LICENSE_FILE)

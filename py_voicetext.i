@@ -5,9 +5,13 @@
 #include "/usr/vt/hikari/D44/inc/vt_jpn.h"
 %}
 
-%typemap(in) (void *value) {
-        $1 = (void *) $input;
-};
+%include "cpointer.i"
+
+%pointer_functions(int, intp);
+
+//%typemap(in) (void *value) {
+//        $1 = (void *) $input;
+//};
 
 %typemap(in) int {
         $1 = PyInt_AsLong($input);
