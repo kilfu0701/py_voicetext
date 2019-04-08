@@ -20,13 +20,14 @@ py_voicetext: py_voicetext_wrap.cxx
 realclean: clean
 
 clean: mostlyclean
-	rm -f _py_voicetext.so _py_voicetext.dylib _py_voicetext.dll
+	rm -f _py_voicetext.*.so _py_voicetext.dylib _py_voicetext.dll
 	rm -f py_voicetext.py py_voicetext.pyc
 
 mostlyclean:
 	rm -f swig-worked
 	rm -f py_voicetext_wrap.cxx py_voicetext_wrap.c
 	rm -rf build/
+	rm -rf __pycache__/
 
 test:
 	LD_LIBRARY_PATH=. python test.py

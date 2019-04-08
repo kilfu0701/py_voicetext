@@ -17,7 +17,7 @@ py_voicetext_module = Extension(
 
 setup(
     name = 'py_voicetext',
-    version = '0.1',
+    version = '0.2',
     author      = "kilfu0701",
     description = """A Wrapper library for voicetext.""",
     ext_modules = [py_voicetext_module],
